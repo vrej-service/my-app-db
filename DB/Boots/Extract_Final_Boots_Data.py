@@ -26,25 +26,27 @@ transformed_data = []
 
 for item in data:
     new_item = {}
-    # --- Rename and Clean Name ---
-    # Remove any text within parentheses from the title and rename key to "Name"
+    # --- Rename and Keep Name ---
+    # Instead of removing any text within parentheses from the title,
+    # we simply use the original title (trimmed).
     original_name = item.get("title", "")
-    cleaned_name = re.sub(r"\([^)]*\)", "", original_name).strip()
-    new_item["Name"] = cleaned_name
+    new_item["Name"] = original_name.strip()
 
     # --- Copy Standard Fields ---
     new_item["url"] = item.get("url", "")
-    # Modified here: "level_required" is now renamed to "level"
+    # Rename level_required to level
     new_item["level"] = item.get("level_required", "")
     new_item["tradeable"] = item.get("tradeable", False)
     new_item["no_auction"] = item.get("no_auction", False)
     new_item["status"] = item.get("status", "")
+    
     # --- Process Sockets ---
     # Instead of copying the list, count the number of strings and subtract 1.
     # If there are no sockets, return [0] instead of [-1].
     socket_list = item.get("sockets", [])
     socket_count = max(len(socket_list) - 1, 0)
     new_item["sockets"] = [socket_count]
+    
     # --- Process Bonuses ---
     new_bonuses = []
     for bonus in item.get("bonuses", []):

@@ -26,11 +26,11 @@ transformed_data = []
 
 for item in data:
     new_item = {}
-    # --- Rename and Clean Name ---
-    # Remove any text within parentheses from the title and rename key to "Name"
+    # --- Rename and Keep Name ---
+    # Instead of removing any text within parentheses,
+    # we simply use the original title (trimmed).
     original_name = item.get("title", "")
-    cleaned_name = re.sub(r"\([^)]*\)", "", original_name).strip()
-    new_item["Name"] = cleaned_name
+    new_item["Name"] = original_name.strip()
 
     # --- Copy Standard Fields ---
     new_item["url"] = item.get("url", "")
@@ -77,7 +77,7 @@ for item in data:
             new_bonuses.append(bonus_mapping)
     new_item["bonuses"] = new_bonuses
 
-     # --- Process Categories ---
+    # --- Process Categories ---
     # Deduplicate category links (preserving order), remove the "/wiki/Category:" prefix,
     # remove the substring "_School_Items" from each category,
     # and ignore any category that includes "_Spells".

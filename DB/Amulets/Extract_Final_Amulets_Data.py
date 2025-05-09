@@ -26,11 +26,10 @@ transformed_data = []
 
 for item in data:
     new_item = {}
-    # --- Rename and Clean Name ---
-    # Remove any text within parentheses from the title and rename key to "Name"
+    # --- Rename and Keep Name ---
+    # Instead of removing text within parentheses, we simply use the original title.
     original_name = item.get("title", "")
-    cleaned_name = re.sub(r"\([^)]*\)", "", original_name).strip()
-    new_item["Name"] = cleaned_name
+    new_item["Name"] = original_name.strip()
 
     # --- Copy Standard Fields ---
     new_item["url"] = item.get("url", "")
