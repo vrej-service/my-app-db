@@ -39,12 +39,14 @@ for item in data:
     new_item["tradeable"] = item.get("tradeable", False)
     new_item["no_auction"] = item.get("no_auction", False)
     new_item["status"] = item.get("status", "")
+    
     # --- Process Sockets ---
     # Instead of copying the list, count the number of strings and subtract 1.
     # If there are no sockets, return [0] instead of [-1].
     socket_list = item.get("sockets", [])
     socket_count = max(len(socket_list) - 1, 0)
     new_item["sockets"] = [socket_count]                                    
+    
     # --- Process Bonuses ---
     new_bonuses = []
     for bonus in item.get("bonuses", []):
@@ -96,21 +98,30 @@ for item in data:
 
     # --- Process Categories ---
     # Deduplicate category links (preserving order), remove the "/wiki/Category:" prefix,
-    # and ignore any category that includes "_Spells". Rename the field to "Wand Type".
+    # remove the substring "_School_Items" from each category,
+    # and ignore any category that includes "_Spells".
+    # Finally, if there is only one cleaned category, store it as a string.
     categories = item.get("category", [])
     seen = set()
     deduped_categories = []
     for cat in categories:
+        # Remove the prefix "/wiki/Category:" if present.
         if cat.startswith("/wiki/Category:"):
             cat_clean = cat[len("/wiki/Category:"):]
         else:
             cat_clean = cat
+        # Remove the substring "_School_Items" from the category.
+        cat_clean = cat_clean.replace("_School_Items", "")
+        # Exclude any category that includes "_Spells".
         if "_Spells" in cat_clean:
             continue
         if cat_clean not in seen:
             deduped_categories.append(cat_clean)
             seen.add(cat_clean)
-    new_item["Wand Type"] = deduped_categories
+    if len(deduped_categories) == 1:
+        new_item["School Type"] = deduped_categories[0]
+    else:
+        new_item["School Type"] = deduped_categories
 
     transformed_data.append(new_item)
 

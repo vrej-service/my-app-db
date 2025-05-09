@@ -34,7 +34,7 @@ for item in data:
 
     # --- Copy Standard Fields ---
     new_item["url"] = item.get("url", "")
-    # Modified here: "level_required" is now renamed to "level"
+    # Rename level_required to level
     new_item["level"] = item.get("level_required", "")
     new_item["tradeable"] = item.get("tradeable", False)
     new_item["no_auction"] = item.get("no_auction", False)
@@ -80,8 +80,10 @@ for item in data:
     new_item["bonuses"] = new_bonuses
 
     # --- Process Categories ---
-    # Deduplicate category links (preserving order) and rename key to "School Type".
-    # Also remove "/wiki/Category:" from the string and ignore any category that includes "_Spells"
+    # Deduplicate category links (preserving order), remove the "/wiki/Category:" prefix,
+    # remove the substring "_School_Items" from each category,
+    # and ignore any category that includes "_Spells".
+    # Finally, if there is only one category left, store it as a string (not a list).
     categories = item.get("category", [])
     seen = set()
     deduped_categories = []
@@ -91,13 +93,19 @@ for item in data:
             cat_clean = cat[len("/wiki/Category:"):]
         else:
             cat_clean = cat
-        # Exclude categories that have _Spells in them.
+        # Remove the substring "_School_Items" from the category.
+        cat_clean = cat_clean.replace("_School_Items", "")
+        # Exclude any category that includes "_Spells".
         if "_Spells" in cat_clean:
             continue
         if cat_clean not in seen:
             deduped_categories.append(cat_clean)
             seen.add(cat_clean)
-    new_item["School Type"] = deduped_categories
+    # If there is only one category, store as text rather than a list.
+    if len(deduped_categories) == 1:
+        new_item["School Type"] = deduped_categories[0]
+    else:
+        new_item["School Type"] = deduped_categories
 
     transformed_data.append(new_item)
 
