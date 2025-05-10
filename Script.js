@@ -5,14 +5,14 @@ $(document).ready(function () {
   // ======================================
   function createSplashIcons() {
     const iconPaths = [
-      "./Icons/Fire.png",
-      "./Icons/Ice.png",
-      "./Icons/Storm.png",
-      "./Icons/Myth.png",
-      "./Icons/Life.png",
-      "./Icons/Death.png",
-      "./Icons/Balance.png",
-      "./Icons/Shadow.png"
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Fire.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Ice.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Storm.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Myth.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Life.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Death.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Balance.png",
+      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Shadow.png"
     ];
     iconPaths.forEach(function (iconSrc) {
       $('#splash-icons').append('<img src="' + iconSrc + '" alt="icon" />');
