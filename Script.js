@@ -5,14 +5,14 @@ $(document).ready(function () {
   // ======================================
   function createSplashIcons() {
     const iconPaths = [
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Fire.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Ice.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Storm.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Myth.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Life.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Death.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Balance.png",
-      "https://github.com/vrej-service/my-app-db/raw/main/Icons/Shadow.png"
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Fire.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Ice.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Storm.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Myth.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Life.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Death.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Balance.png",
+      "https://raw.githubusercontent.com/vrej-service/my-app-db/main/Icons/Shadow.png"
     ];
     iconPaths.forEach(function (iconSrc) {
       $('#splash-icons').append('<img src="' + iconSrc + '" alt="icon" />');
