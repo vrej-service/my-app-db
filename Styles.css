@@ -1,0 +1,517 @@
+/* Define custom color variables for consistency */
+:root {
+  --body-bg-color: #e8d8aa;
+  --container-bg-color: #f7e6b8;
+}
+
+/* Global box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Let the body size dynamically based on content */
+body {
+  font-family: sans-serif;
+  background-color: var(--body-bg-color);
+  margin: 0;
+  padding: 20px;
+}
+
+/* Increase container width to up to 1200px and center it */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--container-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main titles remain black */
+h1, h2 {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Base style for all labels (no colons) */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #955516;
+  text-align: center;
+}
+
+/* Base style for select elements and number inputs */
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Override Select2 rendered text: black and centered */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+/* --- Row 1: School and Level --- */
+.top-fields {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 20px;
+}
+.top-fields .field {
+  width: 200px;
+}
+/* Section title styling */
+.section-title {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Apply container centers the button */
+.apply-container {
+  background-color: darkgreen;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Make the Apply button smaller */
+.apply-button.small-apply {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Existing styling for .top-fields and .field remains unchanged */
+.top-fields {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 10px;
+}
+
+.top-fields .field {
+  width: 200px;
+}
+
+
+
+/* --- Rows 2 & 3: Gear and Accessory rows --- */
+.gear-row,
+.accessory-row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+}
+.gear-row .field,
+.accessory-row .field {
+  flex: 1 1 calc(25% - 10px);
+  margin-right: 10px;
+}
+.gear-row .field:last-child,
+.accessory-row .field:last-child {
+  margin-right: 0;
+}
+
+/* --- Row 4: Jewels Section (New) --- */
+.jewel-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#add-jewels-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: green;
+}
+
+#add-jewels-button:hover {
+  background-color: darkgreen;
+}
+
+.jewel-explanation {
+  font-size: 12px; /* Smaller font size */
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Container for dynamically added jewel dropdowns */
+#jewel-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px; /* Adjust spacing between boxes as needed */
+}
+
+/* Optional: Adjust the styling for each dynamically added box */
+#jewel-container .field {
+  /* Optional styling can go here such as padding or background */
+}
+
+
+/* --- Row 5: Pet (Talent) Section --- */
+.pet-section {
+  margin-top: 20px;
+}
+.pet-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: black;
+}
+/* Three sub-rows for pet talents */
+.pet-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.pet-row .pet-field {
+  flex: 1;
+  text-align: center;
+}
+/* Ensure talent labels in Row 5 are styled */
+.pet-row:first-of-type .pet-field {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #955516;
+}
+
+/* --- Row 6: Mount Section --- */
+.mount-section {
+  margin-top: 20px;
+}
+.mount-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: black;
+}
+/* Mount label row for "Boost" and "Stat" */
+.mount-label-row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-bottom: 10px;
+}
+.mount-label-row .mount-field {
+  width: 200px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #955516;
+}
+/* Mount input row */
+.mount-row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.mount-row .mount-field {
+  width: 200px;
+  text-align: center;
+}
+
+/* --- Row 7: Action Row --- */
+.action-row {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+.action-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+.calculate-button {
+  background-color: #007BFF;
+}
+.calculate-button:hover {
+  background-color: #0056b3;
+}
+.clear-button {
+  background-color: #dc3545;
+}
+.clear-button:hover {
+  background-color: #c82333;
+}
+
+/* --- Row 8: Final Stats Section --- */
+.final-stats {
+  margin-top: 20px;
+}
+
+.final-stats-line {
+  margin-bottom: 20px;
+}
+
+.final-stats-line h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: black;
+}
+
+/* Subrow for Damage/Resistance percentage and flat values */
+.subrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.subrow-label {
+  width: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 10px;
+  color: #955516;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Default center */
+  align-items: center;
+  height: 120px;
+  position: relative;
+}
+
+/* New rules for subrow icons inside the subrow-label */
+.subrow-icon.percent {
+  position: absolute;
+  top: 60px;         /* Center of the middle floor (top 40px is top floor, then middle floor center: 40px + 20px = 60px) */
+  transform: translateY(-50%);
+}
+
+.subrow-icon.flat {
+  position: absolute;
+  top: 100px;        /* Center of the bottom floor: 40px (top) + 40px (middle) + 20px = 100px */
+  transform: translateY(-50%);
+}
+
+/* Grid layouts based on the number of columns */
+.stat-grid {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+}
+
+.grid-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-7 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- Existing Stat Box Styles (for reference; not used in composite layout) --- */
+.stat-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: center;
+  background: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+.stat-box label {
+  display: block;
+  font-size: 12px;
+  color: #955516;
+  margin-bottom: 5px;
+}
+.icon-row {
+  display: flex;
+  justify-content: center;
+}
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.main-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+}
+.subrow-icon {
+  width: 24px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.main-icon {
+  width: 32px;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* --- New Composite Classes for 3-Floor Box Layout ---
+     Each composite box represents one school and has three floors:
+     • Top floor: Contains the school icon (centered)
+     • Middle floor: Displays the percentage damage value
+     • Bottom floor: Displays the flat damage value
+*/
+.composite-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+/* Increase the composite box size */
+.composite-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  height: 120px;  /* Adjust fixed height as desired */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Each floor is centered horizontally and vertically */
+.top-floor,
+.middle-floor,
+.bottom-floor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fixed heights for each floor */
+.top-floor {
+  height: 40px;
+  border-bottom: 1px solid #ccc;  /* Divider between top and middle floors */
+}
+
+.middle-floor {
+  height: 40px;
+  border-bottom: 1px solid #ccc;  /* Divider between middle and bottom floors */
+}
+
+.bottom-floor {
+  height: 40px;
+}
+
+/* In the composite boxes, we now only display the values */
+.stat-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+/* Composite Grid for the two-floor boxes */
+.composite-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+/* Composite Box for 2-floor layout */
+.composite-box2 {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  height: 80px;  /* Two floors of 40px each */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Top floor: holds school icon */
+.top-floor2 {
+  height: 40px;
+  border-bottom: 1px solid #ccc; /* Divider between the two floors */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Middle floor: holds the value */
+.middle-floor2 {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Standard stat icon style */
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Stat value style */
+.stat-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Full-screen splash overlay */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #e8d8aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Style your splash message */
+.splash-message p {
+  font-size: 1.5rem;
+  color: #955516;
+  margin: 0;
+  margin-bottom: 20px; /* Space between text and icons */
+}
+
+/* Container for splash icons: arrange in row with spacing */
+#splash-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+/* Icon styling */
+#splash-icons img {
+  width: 50px;  /* Adjust size as needed */
+  height: 50px;
+  opacity: 0.8;
+}
