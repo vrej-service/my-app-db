@@ -19618,7 +19618,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+1%"
         }
       }
@@ -19998,7 +19998,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+1%"
         }
       }
@@ -22832,7 +22832,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+7%"
         }
       }
@@ -23149,7 +23149,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+7%"
         }
       }
@@ -30706,7 +30706,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+3%"
         }
       }
@@ -31023,7 +31023,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+3%"
         }
       }
@@ -39602,7 +39602,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+2%"
         }
       }
@@ -39919,7 +39919,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+2%"
         }
       }
@@ -41877,7 +41877,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+8%"
         }
       }
@@ -64276,7 +64276,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+4%"
         }
       }
@@ -64593,7 +64593,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+4%"
         }
       }
@@ -70310,7 +70310,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+5%"
         }
       }
@@ -70627,7 +70627,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+5%"
         }
       }
@@ -74538,7 +74538,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Incoming": "+6%"
         }
       }
@@ -74855,7 +74855,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+6%"
         }
       }
@@ -88666,7 +88666,7 @@
     ],
     "bonuses": [
       {
-        "Healing Alternate": {
+        "Healing": {
           "Outgoing": "+8%"
         }
       }

@@ -65,9 +65,15 @@ for item in data:
         bonus_text = bonus_text.replace("Max", "").replace("Chance", "").replace("Rating", "").strip()
         bonus_tokens = bonus_text.split()  # Split bonus text into tokens
 
-        # Process icons: replace "Damage Alternate" with "Damage"
+        # Process icons: replace "Damage Alternate" with "Damage" and "Healing Alternate" with "Healing"
         icons = bonus.get("icons", [])
-        icons = [("Damage" if icon == "Damage Alternate" else icon) for icon in icons]
+        icons = [
+        "Damage" if icon == "Damage Alternate" 
+        else "Healing" if icon == "Healing Alternate" 
+        else icon 
+        for icon in icons
+        ]
+
 
         # Build bonus mapping.
         if len(bonus_tokens) == 1 and len(icons) >= 4:
